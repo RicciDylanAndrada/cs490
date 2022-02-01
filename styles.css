@@ -1,0 +1,81 @@
+
+
+html, body{
+    margin:0
+}
+h1{
+}
+.grid{
+    display: grid;
+    
+    width: 100%;
+    height: 100vh;
+    place-items:  center center;
+}
+.loginBox{
+    background-color: gray;
+    border-radius: 10%;
+    width: 20rem;
+    height: 22rem;
+    padding: 1.2rem;
+    display: grid;
+    place-items:  center center;
+    box-shadow: 10px 10px 20px  black;
+      
+}
+.loginForm{
+    text-align: center;
+
+    display: grid;
+    width: 100%;
+
+    justify-content: center;
+    gap: 1rem;
+}
+.loginForm input{
+    height: 2.8rem;
+    width: 18rem;
+    border-color:grey;
+
+    border-radius: 30px
+}
+.sign-button{
+    height: 3rem;
+
+    border-radius: 30px;
+    width: 100%;
+}
+.inputFields{
+    display: grid;
+    width: 100%;
+    height: 100%;
+    gap: 12px;
+}
+.inputBotton{
+    background-color: white;
+}
+.field{
+  text-align: left;
+  background-size: 1.5rem;
+
+    padding:5px;
+    height: 2.1rem;
+    text-align: center;
+    background-image: url(/images/user.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-origin:content-box
+}
+.field1{
+    text-align: left;
+      padding:5px;
+      height: 2.1rem;
+      background-size: 1.5rem;
+
+      text-align: center;
+      background-image: url(/images/lock.png);
+      background-repeat: no-repeat;
+      background-position: left center;
+      background-origin:content-box
+  }
+  
