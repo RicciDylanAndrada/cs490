@@ -10,21 +10,21 @@
     <div class="grid ">
 
         <div class="loginBox">
-                <form class="loginForm">
+                <form  method="post" id='login_form' class="loginForm" name="login_form">
                     <h1>Login</h1>
 
                     <div class="inputFields">
                         <div class="input-field">
-                            <input type="text"  class="field" placeholder="username"/>
+                            <input type="text"  name="username" id="username" class="field" placeholder="username" required/>
                         </div>
                         
                             <div class="input-field">
-                                <input type="text"  class="field1" placeholder="username"/>
+                                <input type="password" name="password" id="password"  class="field1" placeholder="password" required/>
                             </div>      
                               
                             </div>
                     
-                    <button class="sign-button">Sign In</button>
+                    <button  type="submit"  class="sign-button">Sign In</button>
                     </form>
 
 

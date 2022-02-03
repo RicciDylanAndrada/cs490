@@ -61,7 +61,7 @@ h1{
     padding:5px;
     height: 2.1rem;
     text-align: center;
-    background-image: url(/images/user.png);
+    background-image: url(./images/user.png);
     background-repeat: no-repeat;
     background-position: left center;
     background-origin:content-box
@@ -73,7 +73,7 @@ h1{
       background-size: 1.5rem;
 
       text-align: center;
-      background-image: url(/images/lock.png);
+      background-image: url(./images/lock.png);
       background-repeat: no-repeat;
       background-position: left center;
       background-origin:content-box
