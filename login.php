@@ -2,7 +2,8 @@
 <?php
 
 function to_middle($data){
-    $middle_curl = "";
+    $middle_curl = "
+    http://afsaccessX.njit.edu/~cm39/two.php/";
     $username= $_POST['username'];
     $password= $_POST['password'];
     $x  = curl_init();
