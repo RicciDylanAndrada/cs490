@@ -1,111 +1,67 @@
-<?php session_start();
-   ob_start();
+<?php session_start(); ?>
 
-   
- $username = $_POST["username"];
-   $password = $_POST["password"];
-  
-//      $middle_curl = "https://afsaccess4.njit.edu/~ra595/middleTest.php/";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css?v=<?php echo time(); ?>">
 
-   
-//    $fields = array ('username' =>urlencode($post['username']),
-//    'password' => urlencode($post['password']));   
-
-//    foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
-//    rtrim($fields_string, '&');
-
-//    $ch = curl_init();
-// curl_setopt($ch,CURLOPT_URL, $middle_curl);
-// curl_setopt($ch,CURLOPT_POST, count($fields));
-// curl_setopt($ch,CURLOPT_POSTFIELDS, $fields_string);
-// curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-// $result = curl_exec($ch);
-
-
-
-
-//curl_close($ch);
-
-
-
-if(isset($_POST['username']) && isset($_POST['password']) && !empty($_POST['password'])){
-	$pass = $_POST['password'];
-	$middle_curl = "https://afsaccess4.njit.edu/~pmp94/cs490/login.php";
-
-//   $fields = array(
-//     'username' => $_POST['username'],
-//     'password' => $_POST['password']
-// ); 
-
-//foreach ( $fields as $key => $value) {
-  //$post_items[] = $key . '=' . urlencode($value);
-//}
-//    $fields = array ('username' =>urlencode($post['username']),
-//    'password' => urlencode($post['password']));   
-$fields = array('username' => urlencode($_POST['username']),'password' => urlencode($_POST['password']));
-
-
-   $ch = curl_init();
-curl_setopt($ch,CURLOPT_URL, $middle_curl);
-curl_setopt($ch,CURLOPT_POST, count($fields));
-curl_setopt($ch,CURLOPT_POSTFIELDS, http_build_query($fields));
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-$result = curl_exec($ch);
-
-curl_close($ch);
-
-//$res = json_encode($result,true);//testing
-
-$res = json_decode($result,true);
-		if($res){
-      echo $result;
-			
-			if($res['status']==0){
-
-				
-				$_SESSION['id'] = $res[0];
-				$_SESSION['username'] = $_POST['username'];
-			
-        
-
-			} elseif($res['status']==1){
-        $_SESSION['id'] = 1;
-				$_SESSION['username'] = $_POST['username'];
-
-        //header("Location: https://afsaccess4.njit.edu/~ra595/teacher.php");
-			
-      }
-	  elseif($res['status']==-1){
-        $_SESSION['id'] = 1;
-				$_SESSION['username'] = $_POST['username'];
-
-		echo '<script>alert("you have entered an invalid email address or password. please try again ")</script>'; 
-
-			
-      }
-	  
-			else{
-				
-				echo '<script>alert("you have entered an invalid email address or password. please try again ")</script>'; 
-			}
+<title>CS490</title>
+</head>
+<body>
+    
+    
+    
     
 
-      
-		}
-		else{
-			
-				echo '<script>alert("you have entered an invalid email address or password. please try again ")</script>'; 
-
-		}
-	
-}
 
 
-//echo json_encode($middle_response);
+    
+    
+    
+    <div class="grid ">
 
-  
-ob_end_flush();
+        <div class="loginBox">
+                <form action="login.php" method="post" id='login_form' class="loginForm" name="login_form">
+                    <h1>Login</h1>
 
-?>
+                    <div class="inputFields">
+                        <div class="input-field">
+                            <input type="text"  name="username" id="username" class="field" placeholder="username" required/>
+                        </div>
+                        
+                            <div class="input-field">
+                                <input type="password" name="password" id="password"  class="field1" placeholder="password" required/>
+                            </div>      
+                              
+                            </div>
+                    
+                    <button  type="submit" name="submit-btn"  class="sign-button">Sign In</button>
+                    
+                    </form>
+
+
+                                     
+            </div>
+            
+      <h1>
+
+<?php if (isset($_SESSION['error'])) {
+  echo $_SESSION['error'];
+  unset($_SESSION['error']);
+} ?>
+</h1>
+        </div>
+    </div>
+    
+    
+
+
+ })
+
+
+    </script> -->
+</body>
+</html>
